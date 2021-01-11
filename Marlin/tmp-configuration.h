@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  */
 #pragma once
 
 //JUST uncomment the option for your machine
-//#define V6_330_TITAN_TMC 1
+#define V6_330_TITAN_TMC 1
 //#define V6_330_TITAN_NO_TMC 1
-  #define V6_330_NO_TITAN_TMC 1
+//  #define V6_330_NO_TITAN_TMC 1
 //#define V6_330_NO_TITAN_NO_TMC 1
 // #define V6_400_TITAN_TMC 1
 // #define V6_400_NO_TITAN_TMC 1
@@ -32,38 +32,36 @@
 
 // #define V5_330_TITAN_TMC 1
 // #define V5_330_TITAN_NO_TMC 1
-// #define V5_330_NO_TITAN_TMC 1         
-//#define V5_330_NO_TITAN_NO_TMC 1
+// #define V5_330_NO_TITAN_TMC 1
+// #define V5_330_NO_TITAN_NO_TMC 1
 // #define XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL 1
-
-// #define MKS_UI
 
 #if V6_330_TITAN_TMC
   #define MOTHERBOARD BOARD_CHITU3D_V6
   #define WITH_TMC 1
-  #define WITH_TITAN 1
-  #define X_BED_SIZE 330
+  //#define WITH_TITAN 1, //jaideep, commented to replicate the behavior of no titan which is available on all the christmas shipped printer, 28/12/2020
+  #define X_BED_SIZE 320
   #define Y_BED_SIZE 330
   #define Z_MAX_POS 99999
-  #define CUSTOM_MACHINE_NAME "WRONG"
+  #define CUSTOM_MACHINE_NAME "iFactory3D BeltPrinter"
 
 #elif V6_330_TITAN_NO_TMC
   #define MOTHERBOARD BOARD_CHITU3D_V6
   //#define WITH_TMC 1
   #define WITH_TITAN 1
-  #define X_BED_SIZE 260
-  #define Y_BED_SIZE 180
-  #define Z_MAX_POS 999
-  #define CUSTOM_MACHINE_NAME "iFactory Beltprinter"
+  #define X_BED_SIZE 330
+  #define Y_BED_SIZE 330
+  #define Z_MAX_POS 400
+  #define CUSTOM_MACHINE_NAME "Tronxy X5SA V6 330 Titan"
 
 #elif V6_330_NO_TITAN_TMC
   #define MOTHERBOARD BOARD_CHITU3D_V6
   #define WITH_TMC 1
   //#define WITH_TITAN 1
-  #define X_BED_SIZE 260
-  #define Y_BED_SIZE 180
-  #define Z_MAX_POS 99999
-  #define CUSTOM_MACHINE_NAME "iFactory3D says: Hi!"
+  #define X_BED_SIZE 330
+  #define Y_BED_SIZE 330
+  #define Z_MAX_POS 400
+  #define CUSTOM_MACHINE_NAME "Tronxy X5SA V6 330 TMC"
 
 #elif V6_330_NO_TITAN_NO_TMC
   #define MOTHERBOARD BOARD_CHITU3D_V6
@@ -73,7 +71,7 @@
   #define Y_BED_SIZE 330
   #define Z_MAX_POS 400
   #define CUSTOM_MACHINE_NAME "Tronxy X5SA V6"
-
+  
 #elif V6_400_TITAN_TMC
   #define MOTHERBOARD BOARD_CHITU3D_V6
   #define WITH_TMC 1
@@ -172,13 +170,13 @@
 /**
  * Here are some standard links for getting your machine calibrated:
  *
- * https://reprap.org/wiki/Calibration
- * https://youtu.be/wAL9d7FgInk
+ * http://reprap.org/wiki/Calibration
+ * http://youtu.be/wAL9d7FgInk
  * http://calculator.josefprusa.cz
- * https://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide
- * https://www.thingiverse.com/thing:5573
+ * http://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide
+ * http://www.thingiverse.com/thing:5573
  * https://sites.google.com/site/repraplogphase/calibration-of-your-reprap
- * https://www.thingiverse.com/thing:298812
+ * http://www.thingiverse.com/thing:298812
  */
 
 //===========================================================================
@@ -219,9 +217,7 @@
 //#define SHOW_CUSTOM_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
-#ifndef MKS_UI
 #define CUSTOM_STATUS_SCREEN_IMAGE
-#endif
 
 // @section machine
 
@@ -797,7 +793,7 @@
 #define X_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING true // Set to true to invert the logic of the probe.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
 /**
  * Stepper Drivers
@@ -869,9 +865,6 @@
  */
 //#define ENDSTOP_NOISE_THRESHOLD 2
 
-// Check for stuck or disconnected endstops during homing moves.
-//#define DETECT_BROKEN_ENDSTOP
-
 //=============================================================================
 //============================== Movement Settings ============================
 //=============================================================================
@@ -893,14 +886,14 @@
 //#define DISTINCT_E_FACTORS
 
 /**
- * Default Axis Steps Per Unit (steps/mm) 
+ * Default Axis Steps Per Unit (steps/mm)
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 #if WITH_TMC && WITH_TITAN
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 764 }
 #elif WITH_TMC && !WITH_TITAN
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 177.14 }   
+  #define DEFAULT_AXIS_STEPS_PER_UNIT     { 160, 160, 280, 840 } //{ 160, 160, 800, 177.14 } //{1},{2},{3},186,  jaideep
 #elif WITH_TITAN && !WITH_TMC
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 420 }
 #else
@@ -977,7 +970,7 @@
  *
  * See:
  *   https://reprap.org/forum/read.php?1,739819
- *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
+ *   http://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
   #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
@@ -1204,7 +1197,7 @@
 // Enable the M48 repeatability test to test probe accuracy
 #ifndef XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL
 #define Z_MIN_PROBE_REPEATABILITY_TEST
-#endif
+#endif 
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -1287,7 +1280,7 @@
 
 //#define UNKNOWN_Z_NO_RAISE      // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-#define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+//#define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                                   // Be sure to have this much clearance over your Z_MAX_POS to prevent grinding.
 
 //#define Z_AFTER_HOMING  10      // (mm) Height to move to after homing Z
@@ -1296,20 +1289,20 @@
 // :[-1,1]
 #define X_HOME_DIR 1
 #define Y_HOME_DIR 1
-#define Z_HOME_DIR -1  //Direction of z axis 
+#define Z_HOME_DIR -1
 
 // @section machine
 
 // The size of the print bed
- #define X_BED_SIZE 260
- #define Y_BED_SIZE 180
+ #define X_BED_SIZE 320
+ #define Y_BED_SIZE 330
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
-#define Z_MIN_POS 0                        
+#define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS 330
+#define Y_MAX_POS Y_BED_SIZE
 
 /**
  * Software Endstops
@@ -1346,21 +1339,18 @@
  *
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
+ * By default the firmware assumes HIGH=FILAMENT PRESENT.
  */
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_STATE     LOW   // Pin state indicating that filament is NOT present.
-  #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
+  #define FIL_RUNOUT_INVERTING false // Set to true to invert the logic of the sensor.
+  //#define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
 
   // Set one or more commands to execute on filament runout.
   // (After 'M412 H' Marlin will ask the host to handle the process.)
-  #ifndef MKS_UI
   #define FILAMENT_RUNOUT_SCRIPT "M600"
-  #else
-  #define FILAMENT_RUNOUT_SCRIPT "M25"
-  #endif
 
   // After a runout is detected, continue printing this length of filament
   // before executing the runout script. Useful for a sensor at the end of
@@ -1427,7 +1417,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-#define RESTORE_LEVELING_AFTER_G28
+//#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1518,7 +1508,7 @@
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-  //#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS  
+  //#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
 
 #endif // BED_LEVELING
 
@@ -1526,9 +1516,8 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-#ifndef MKS_UI
-#define LCD_BED_LEVELING
-#endif
+//#define LCD_BED_LEVELING, dima, 28-12-2020
+
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
   #define LCD_PROBE_Z_RANGE 4     // (mm) Z Range centered on Z_MIN_POS for LCD Z adjustment
@@ -1560,7 +1549,7 @@
 // For DELTA this is the top-center of the Cartesian print volume.
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
-//#define MANUAL_Z_HOME_POS 0  
+//#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
@@ -1568,14 +1557,14 @@
 //
 // - Allow Z homing only after X and Y homing AND stepper drivers still enabled.
 // - If stepper drivers time out, it will need X and Y homing again before Z homing.
-// - Move the Z probe (or nozzle) to a defined XY point before Z Homing.
+// - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-#define Z_SAFE_HOMING
+//#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing when homing all axes (G28).
 #endif
 
 // Homing speeds (mm/m)
@@ -1713,10 +1702,11 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
+  //#define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
   #define NOZZLE_PARK_POINT { (X_MAX_POS - 10), (Y_MAX_POS - 10), 0 }
   //#define NOZZLE_PARK_X_ONLY          // X move only is required to park
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
-  #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
+  // #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance, dima, 28-12-2020, commented
   #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
   #define NOZZLE_PARK_Z_FEEDRATE    5   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
@@ -1785,10 +1775,6 @@
 
   // Enable for a purge/clean station that's always at the gantry height (thus no Z move)
   //#define NOZZLE_CLEAN_NO_Z
-
-  // Explicit wipe G-code script applies to a G12 with no arguments.
-  //#define WIPE_SEQUENCE_COMMANDS "G1 X-17 Y25 Z10 F4000\nG1 Z1\nM114\nG1 X-17 Y25\nG1 X-17 Y95\nG1 X-17 Y25\nG1 X-17 Y95\nG1 X-17 Y25\nG1 X-17 Y95\nG1 X-17 Y25\nG1 X-17 Y95\nG1 X-17 Y25\nG1 X-17 Y95\nG1 X-17 Y25\nG1 X-17 Y95\nG1 Z15\nM400\nG0 X-10.0 Y-9.0"
-
 #endif
 
 /**
@@ -1834,9 +1820,9 @@
  * Select the language to display on the LCD. These languages are available:
  *
  *   en, an, bg, ca, cz, da, de, el, el_gr, es, eu, fi, fr, gl, hr, hu, it,
- *   jp_kana, ko_KR, nl, pl, pt, pt_br, ro ru, sk, tr, uk, vi, zh_CN, zh_TW, test
+ *   jp_kana, ko_KR, nl, pl, pt, pt_br, ru, sk, tr, uk, vi, zh_CN, zh_TW, test
  *
- * :{ 'en':'English', 'an':'Aragonese', 'bg':'Bulgarian', 'ca':'Catalan', 'cz':'Czech', 'da':'Danish', 'de':'German', 'el':'Greek', 'el_gr':'Greek (Greece)', 'es':'Spanish', 'eu':'Basque-Euskera', 'fi':'Finnish', 'fr':'French', 'gl':'Galician', 'hr':'Croatian', 'hu':'Hungarian', 'it':'Italian', 'jp_kana':'Japanese', 'ko_KR':'Korean (South Korea)', 'nl':'Dutch', 'pl':'Polish', 'pt':'Portuguese', 'pt_br':'Portuguese (Brazilian)', 'ro':'Romanian', 'ru':'Russian', 'sk':'Slovak', 'tr':'Turkish', 'uk':'Ukrainian', 'vi':'Vietnamese', 'zh_CN':'Chinese (Simplified)', 'zh_TW':'Chinese (Traditional)', 'test':'TEST' }
+ * :{ 'en':'English', 'an':'Aragonese', 'bg':'Bulgarian', 'ca':'Catalan', 'cz':'Czech', 'da':'Danish', 'de':'German', 'el':'Greek', 'el_gr':'Greek (Greece)', 'es':'Spanish', 'eu':'Basque-Euskera', 'fi':'Finnish', 'fr':'French', 'gl':'Galician', 'hr':'Croatian', 'hu':'Hungarian', 'it':'Italian', 'jp_kana':'Japanese', 'ko_KR':'Korean (South Korea)', 'nl':'Dutch', 'pl':'Polish', 'pt':'Portuguese', 'pt_br':'Portuguese (Brazilian)', 'ru':'Russian', 'sk':'Slovak', 'tr':'Turkish', 'uk':'Ukrainian', 'vi':'Vietnamese', 'zh_CN':'Chinese (Simplified)', 'zh_TW':'Chinese (Traditional)', 'test':'TEST' }
  */
 #define LCD_LANGUAGE en
 
@@ -1985,7 +1971,7 @@
 
 //
 // RepRapDiscount Smart Controller.
-// https://reprap.org/wiki/RepRapDiscount_Smart_Controller
+// http://reprap.org/wiki/RepRapDiscount_Smart_Controller
 //
 // Note: Usually sold with a white PCB.
 //
@@ -2009,13 +1995,13 @@
 
 //
 // PanelOne from T3P3 (via RAMPS 1.4 AUX2/AUX3)
-// https://reprap.org/wiki/PanelOne
+// http://reprap.org/wiki/PanelOne
 //
 //#define PANEL_ONE
 
 //
 // GADGETS3D G3D LCD/SD Controller
-// https://reprap.org/wiki/RAMPS_1.3/1.4_GADGETS3D_Shield_with_Panel
+// http://reprap.org/wiki/RAMPS_1.3/1.4_GADGETS3D_Shield_with_Panel
 //
 // Note: Usually sold with a blue PCB.
 //
@@ -2102,7 +2088,7 @@
 
 //
 // 2-wire Non-latching LCD SR from https://goo.gl/aJJ4sH
-// LCD configuration: https://reprap.org/wiki/SAV_3D_LCD
+// LCD configuration: http://reprap.org/wiki/SAV_3D_LCD
 //
 //#define SAV_3DLCD
 
@@ -2129,7 +2115,7 @@
 
 //
 // RepRapDiscount FULL GRAPHIC Smart Controller
-// https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
+// http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
 //#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
@@ -2142,20 +2128,20 @@
 //
 // Activate one of these if you have a Panucatt Devices
 // Viki 2.0 or mini Viki with Graphic LCD
-// https://www.panucatt.com
+// http://panucatt.com
 //
 //#define VIKI2
 //#define miniVIKI
 
 //
 // MakerLab Mini Panel with graphic
-// controller and SD support - https://reprap.org/wiki/Mini_panel
+// controller and SD support - http://reprap.org/wiki/Mini_panel
 //
 //#define MINIPANEL
 
 //
 // MaKr3d Makr-Panel with graphic controller and SD support.
-// https://reprap.org/wiki/MaKr3d_MaKrPanel
+// http://reprap.org/wiki/MaKr3d_MaKrPanel
 //
 //#define MAKRPANEL
 
@@ -2241,7 +2227,7 @@
 
 //
 // Silvergate GLCD controller
-// https://github.com/android444/Silvergate
+// http://github.com/android444/Silvergate
 //
 //#define SILVER_GATE_GLCD_CONTROLLER
 
@@ -2270,7 +2256,7 @@
 
 //
 // MKS OLED 1.3" 128 × 64 FULL GRAPHICS CONTROLLER
-// https://reprap.org/wiki/MKS_12864OLED
+// http://reprap.org/wiki/MKS_12864OLED
 //
 // Tiny, but very sharp OLED display
 //
@@ -2286,11 +2272,6 @@
 // Overlord OLED display/controller with i2c buzzer and LEDs
 //
 //#define OVERLORD_OLED
-
-//
-// FYSETC OLED 2.42" 128 × 64 FULL GRAPHICS CONTROLLER with WS2812 RGB
-// Where to find : https://www.aliexpress.com/item/4000345255731.html
-//#define FYSETC_242_OLED_12864   // Uses the SSD1309 controller
 
 //=============================================================================
 //========================== Extensible UI Displays ===========================
@@ -2322,10 +2303,6 @@
 //
 //#define EXTENSIBLE_UI
 
-#if ENABLED(EXTENSIBLE_UI)
-  //#define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display
-#endif
-
 //=============================================================================
 //=============================== Graphical TFTs ==============================
 //=============================================================================
@@ -2333,18 +2310,13 @@
 //
 // FSMC display (MKS Robin, Alfawise U20, JGAurora A5S, REXYZ A1, etc.)
 //
-#ifndef MKS_UI
-  #define FSMC_GRAPHICAL_TFT
+#define FSMC_GRAPHICAL_TFT // jaideep, already un-commented
 //TFT SETUP DONE BY CHITU BOARD
-#else
+
 //
-// TFT LVGL UI
+// TFT Little VGL UI
 //
-// Default MKS icons and fonts: https://git.io/JJvzK
-// Copy mks_pic and mks_font folders to the root of your SD
-//
-  #define TFT_LVGL_UI
-#endif
+//#define TFT_LITTLE_VGL_UI
 
 //=============================================================================
 //============================  Other Controllers  ============================
@@ -2387,7 +2359,7 @@
 
 //
 // RepRapWorld REPRAPWORLD_KEYPAD v1.1
-// https://reprapworld.com/?products_details&products_id=202&cPath=1591_1626
+// http://reprapworld.com/?products_details&products_id=202&cPath=1591_1626
 //
 //#define REPRAPWORLD_KEYPAD
 //#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0 // (mm) Distance to move per key-press
@@ -2424,7 +2396,7 @@
 // then the BLUE led is on. Otherwise the RED led is on. (1C hysteresis)
 //#define TEMP_STAT_LEDS
 
-// SkeinForge sends the wrong arc G-codes when using Arc Point as fillet procedure
+// SkeinForge sends the wrong arc g-codes when using Arc Point as fillet procedure
 //#define SF_ARC_FIX
 
 // Support for the BariCUDA Paste Extruder

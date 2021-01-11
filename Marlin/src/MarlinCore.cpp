@@ -422,7 +422,7 @@ void startOrResumeJob() {
   print_job_timer.start();
 }
 
-#if ENABLED(SDSUPPORT)
+//#if ENABLED(SDSUPPORT)
 
   inline void abortSDPrinting() {
     card.endFilePrint(TERN_(SD_RESORT, true));
@@ -449,7 +449,7 @@ void startOrResumeJob() {
       marlin_state = MF_RUNNING;
   }
 
-#endif // SDSUPPORT
+//#endif // SDSUPPORT
 
 /**
  * Minimal management of Marlin's core activities:
@@ -1211,7 +1211,10 @@ void loop() {
       if (card.flag.abort_sd_printing) abortSDPrinting();
       if (marlin_state == MF_SD_COMPLETE) finishSDPrinting();
     #endif
-
+    //jaideep, check if sd card print algo can be used for aborting.
+      //card.checkautostart();
+      //if (card.flag.abort_sd_printing) abortSDPrinting(); // commented 17:57
+      //if (marlin_state == MF_SD_COMPLETE) finishSDPrinting();// commented 17:57
     queue.advance();
 
     endstops.event_handler();

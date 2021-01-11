@@ -31,7 +31,7 @@
 #if ENABLED(MIXING_EXTRUDER)
   #include "../feature/mixing.h"
 #endif
-
+#define POWER_LOSS_STATE HIGH
 #if !defined(POWER_LOSS_STATE) && PIN_EXISTS(POWER_LOSS)
   #define POWER_LOSS_STATE HIGH
 #endif

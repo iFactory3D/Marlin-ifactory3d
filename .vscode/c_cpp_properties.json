@@ -1,28 +1,30 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
 {
     "configurations": [
         {
-            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
-        },
-        {
-            "name": "Win32",
+            "name": "PlatformIO",
             "includePath": [
-                "d:/marlin/1/mine/Marlin-tronxy-full/include",
-                "d:/marlin/1/mine/Marlin-tronxy-full/Marlin",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/include",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/Marlin",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/USBComposite",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/EEPROM",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/STM32ADC/src",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SailfishLCD",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidTWI2",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SlowSoftI2CMaster",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Arduino-L6470/src",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/U8glib-HAL/src",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Adafruit MAX31865 library",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/TMCStepper/src",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SoftwareSerialM",
-                "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidCrystal",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SailfishLCD",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidTWI2",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SlowSoftI2CMaster",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Arduino-L6470/src",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/U8glib-HAL/src",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Adafruit MAX31865 library",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/TMCStepper/src",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SoftwareSerialM",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidCrystal",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/Wire",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/Wire/utility",
-                "d:/marlin/1/mine/Marlin-tronxy-full/Marlin/src/HAL/STM32F1",
+                "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/Marlin/src/HAL/STM32F1",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/cores/maple",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple",
                 "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple/include",
@@ -65,23 +67,23 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "d:/marlin/1/mine/Marlin-tronxy-full/include",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/Marlin",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/include",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/Marlin",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/USBComposite",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/EEPROM",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/STM32ADC/src",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SailfishLCD",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidTWI2",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SlowSoftI2CMaster",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Arduino-L6470/src",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/U8glib-HAL/src",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Adafruit MAX31865 library",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/TMCStepper/src",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SoftwareSerialM",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidCrystal",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SailfishLCD",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidTWI2",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SlowSoftI2CMaster",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Arduino-L6470/src",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/U8glib-HAL/src",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/Adafruit MAX31865 library",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/TMCStepper/src",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/SoftwareSerialM",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/.pio/libdeps/chitu_f103/LiquidCrystal",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/Wire",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/Wire/utility",
-                    "d:/marlin/1/mine/Marlin-tronxy-full/Marlin/src/HAL/STM32F1",
+                    "d:/marlin/2_powerloss/mine/Marlin-tronxy-full/Marlin/src/HAL/STM32F1",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/cores/maple",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple",
                     "C:/Users/poligy GmbH/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple/include",
@@ -123,7 +125,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=50003",
+                "PLATFORMIO=50004",
                 "STM32F103xE",
                 "STM32F1",
                 "TARGET_STM32F1",
@@ -144,7 +146,6 @@
                 "SERIAL_USB",
                 ""
             ],
-            "intelliSenseMode": "gcc-x64",
             "cStandard": "c11",
             "cppStandard": "c++14",
             "compilerPath": "C:/Users/poligy GmbH/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc.exe",

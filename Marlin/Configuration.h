@@ -51,7 +51,7 @@
   #define WITH_TITAN 1
   #define X_BED_SIZE 330
   #define Y_BED_SIZE 330
-  #define Z_MAX_POS 400
+  #define Z_MAX_POS 400 
   #define CUSTOM_MACHINE_NAME "Tronxy X5SA V6 330 Titan"
 
 #elif V6_330_NO_TITAN_TMC
@@ -214,7 +214,7 @@
 #define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
-//#define SHOW_CUSTOM_BOOTSCREEN
+// #define SHOW_CUSTOM_BOOTSCREEN // jaideep, custom screen
 
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
 #define CUSTOM_STATUS_SCREEN_IMAGE
@@ -793,7 +793,7 @@
 #define X_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true // Set to true to invert the logic of the probe.
 
 /**
  * Stepper Drivers
@@ -1264,7 +1264,7 @@
 #if WITH_TITAN
   #define INVERT_E0_DIR true
 #else
-  #define INVERT_E0_DIR true
+  #define INVERT_E0_DIR true // ben, for new extruder, changed to false. original software is true
 #endif
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
@@ -1294,15 +1294,15 @@
 // @section machine
 
 // The size of the print bed
- #define X_BED_SIZE 290
- #define Y_BED_SIZE 330
+ #define X_BED_SIZE 290 
+ #define Y_BED_SIZE 330 
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE
+#define X_MAX_POS 300
+#define Y_MAX_POS 330
 
 /**
  * Software Endstops
@@ -1417,7 +1417,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
