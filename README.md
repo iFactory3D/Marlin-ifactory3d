@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-# This repository is just a copy of the official Marlin, with Tronxy X5SA (and variants) pre-configured.
-
-## JUST uncomment the option for your machine
-```cpp
-// #define V6_330_TITAN_TMC 1
-// #define V6_330_TITAN_NO_TMC 1
-// #define V6_330_NO_TITAN_TMC 1
-// #define V6_330_NO_TITAN_NO_TMC 1
-// #define V6_400_TITAN_TMC 1
-// #define V6_400_NO_TITAN_TMC 1
-// #define V6_500_TITAN_TMC 1
-
-// #define V5_330_TITAN_TMC 1
-// #define V5_330_TITAN_NO_TMC 1
-// #define V5_330_NO_TITAN_TMC 1
-// #define V5_330_NO_TITAN_NO_TMC 1
-// #define XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL 1
-```
-=======
-![image](https://drive.google.com/uc?export=view&id=1dkR_PIXPiAQA9x2PIjh7WHnz9MGpRK8x)
 
 # This repository contains the preconfigured firmware for the iFactory3D printers. 
 
