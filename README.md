@@ -21,9 +21,6 @@ _If you wish, you can directly download, edit and modify our printer's firmware 
 
 ### Contact us for help :)
 
-_You can find a more detailled explanation in the filelist above, called "Quickguide.txt"_
->>>>>>> 3ad0a4e0a2c7f6fe4333a0b5d829d3516e92584a
-
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
