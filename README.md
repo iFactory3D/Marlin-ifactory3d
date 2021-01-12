@@ -33,7 +33,6 @@ _If you wish, you can directly download, edit and modify our printer's firmware 
 Additional documentation can be found at the [Marlin Home Page](https://marlinfw.org/).
 Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
 
-<<<<<<< HEAD
 ## Marlin 2.0 Bugfix Branch
 
 __Not for production use. Use with caution!__
@@ -130,7 +129,6 @@ Proposed patches should be submitted as a Pull Request against the ([bugfix-2.0.
 
 ### [RepRap.org Wiki Page](http://reprap.org/wiki/Marlin)
 =======
->>>>>>> 3ad0a4e0a2c7f6fe4333a0b5d829d3516e92584a
 
 ## Credits
 
