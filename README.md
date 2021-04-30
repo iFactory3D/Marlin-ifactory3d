@@ -1,21 +1,25 @@
-# This repository is just a copy of the official Marlin, with Tronxy X5SA (and variants) pre-configured.
 
-## JUST uncomment the option for your machine
-```cpp
-// #define V6_330_TITAN_TMC 1
-// #define V6_330_TITAN_NO_TMC 1
-// #define V6_330_NO_TITAN_TMC 1
-// #define V6_330_NO_TITAN_NO_TMC 1
-// #define V6_400_TITAN_TMC 1
-// #define V6_400_NO_TITAN_TMC 1
-// #define V6_500_TITAN_TMC 1
+# This repository contains the preconfigured firmware for the iFactory3D printers. 
 
-// #define V5_330_TITAN_TMC 1
-// #define V5_330_TITAN_NO_TMC 1
-// #define V5_330_NO_TITAN_TMC 1
-// #define V5_330_NO_TITAN_NO_TMC 1
-// #define XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL 1
-```
+_This repository is originally forked from: https://github.com/rhapsodyv/Marlin_
+
+_This firmware is currently based on a modified version of Marlin 2.0 and includes a set of special configurations for the iFactory 3D printers._
+_If you wish, you can directly download, edit and modify our printer's firmware or flash the stock version on your printer._
+
+## Instruction
+
+- Install Visual Studio Code with the Platform IO IDE and C/C++ extensions 
+- Install Github Desktop 
+- Fork and clone this repository
+- Open it with Studio Code
+- Edit like you wish and compile it
+- Copy the created update.cbd file to a SD card 
+- Turn off printer
+- Put SD card in printer
+- Start printer and wait
+- You're finished!!!!
+
+### Contact us for help :)
 
 # Marlin 3D Printer Firmware
 
