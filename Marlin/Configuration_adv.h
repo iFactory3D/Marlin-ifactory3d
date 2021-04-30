@@ -812,8 +812,8 @@
 // Steppers will shut down DEFAULT_STEPPER_DEACTIVE_TIME seconds after the last move when DISABLE_INACTIVE_? is true.
 // Time can be set by M18 and M84.
 #define DEFAULT_STEPPER_DEACTIVE_TIME 120
-#define DISABLE_INACTIVE_X true   // dima, 28-12-2020, set to false, position of nozzle is intact and doesn't go down,  false doesn't seem to work 11,01,2021
-#define DISABLE_INACTIVE_Y true // dima, 28-12-2020, set to false, position of nozzle is intact and doesn't go down
+#define DISABLE_INACTIVE_X false   // dima, 28-12-2020, set to false, position of nozzle is intact and doesn't go down,  false doesn't seem to work 11,01,2021
+#define DISABLE_INACTIVE_Y false // dima, 28-12-2020, set to false, position of nozzle is intact and doesn't go down
 #define DISABLE_INACTIVE_Z true  // Set to false if the nozzle will fall down on your printed part when print has finished.
 #define DISABLE_INACTIVE_E true
 
@@ -1142,12 +1142,12 @@
    * an option on the LCD screen to continue the print from the last-known
    * point in the file.
    */
-  #define POWER_LOSS_RECOVERY
+  //#define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
     #define PLR_ENABLED_DEFAULT   true // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
     #define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     //#define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on power loss with UPS)
-    #define POWER_LOSS_PIN         44 // Pin to detect power loss. Set to -1 to disable default pin on boards without module // jaideep uncomment
+    #define POWER_LOSS_PIN         PG2//44 // Pin to detect power loss. Set to -1 to disable default pin on boards without module // jaideep uncomment
     #define POWER_LOSS_STATE     HIGH // State of pin indicating power loss // jaideep uncomment
     //#define POWER_LOSS_PULL           // Set pullup / pulldown as appropriate
     //#define POWER_LOSS_PURGE_LEN   20 // (mm) Length of filament to purge on resume

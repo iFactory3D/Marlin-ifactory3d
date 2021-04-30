@@ -40,7 +40,7 @@
   #define MOTHERBOARD BOARD_CHITU3D_V6
   #define WITH_TMC 1
   //#define WITH_TITAN 1, //jaideep, commented to replicate the behavior of no titan which is available on all the christmas shipped printer, 28/12/2020
-  #define X_BED_SIZE 290
+  #define X_BED_SIZE 300
   #define Y_BED_SIZE 330
   #define Z_MAX_POS 99999
   #define CUSTOM_MACHINE_NAME "iFactory3D BeltPrinter"
@@ -235,7 +235,7 @@
  * Select a secondary serial port on the board to use for communication with the host.
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT_2 3
+#define SERIAL_PORT_2 -1
 
 /**
  * This setting determines the communication speed of the printer.
@@ -246,7 +246,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -893,7 +893,7 @@
 #if WITH_TMC && WITH_TITAN
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 764 }
 #elif WITH_TMC && !WITH_TITAN
-  #define DEFAULT_AXIS_STEPS_PER_UNIT     { 160, 160, 280, 840 } //{ 160, 160, 800, 177.14 } //{1},{2},{3},186,  jaideep
+  #define DEFAULT_AXIS_STEPS_PER_UNIT     { 160, 160, 333, 840 } //{ 160, 160, 800, 177.14 } //{1},{2},{3},186,  jaideep
 #elif WITH_TITAN && !WITH_TMC
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 420 }
 #else
@@ -1047,7 +1047,7 @@
 #ifdef XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL
   #define PROBE_MANUALLY
 #else
-  #define FIX_MOUNTED_PROBE
+  #define FIX_MOUNTED_PROBE // jaideep, 21-04-2021
 #endif
 
 /**
@@ -1142,7 +1142,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { -35, -0, 0 }
+// #define NOZZLE_TO_PROBE_OFFSET { -35, -0, 0 } // jaideep, 21-04-2021
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1196,7 +1196,7 @@
 
 // Enable the M48 repeatability test to test probe accuracy
 #ifndef XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL
-#define Z_MIN_PROBE_REPEATABILITY_TEST
+//#define Z_MIN_PROBE_REPEATABILITY_TEST // jaideep, 21-04-2021
 #endif 
 
 // Before deploy/stow pause for user confirmation
@@ -1294,14 +1294,14 @@
 // @section machine
 
 // The size of the print bed
- #define X_BED_SIZE 290 
+ #define X_BED_SIZE 310 
  #define Y_BED_SIZE 330 
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
+#define X_MIN_POS 20
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 300
+#define X_MAX_POS 330
 #define Y_MAX_POS 330
 
 /**
@@ -1405,19 +1405,21 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
+/* // jaideep,, 21-04-2021
 #ifdef XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL
   #define MESH_BED_LEVELING
 #else
   #define AUTO_BED_LEVELING_BILINEAR
 #endif
-//#define AUTO_BED_LEVELING_UBL
+*/
+//#define AUTO_BED_LEVELING_UBL // jaideep, 21-04-2021
 //#define MESH_BED_LEVELING
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-#define RESTORE_LEVELING_AFTER_G28
+//#define RESTORE_LEVELING_AFTER_G28 // jaideep, 21-04-2021
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1525,7 +1527,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-#define LEVEL_BED_CORNERS
+//#define LEVEL_BED_CORNERS //jaideep,  21-04-2021
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets

@@ -1,25 +1,21 @@
+# This repository is just a copy of the official Marlin, with Tronxy X5SA (and variants) pre-configured.
 
-# This repository contains the preconfigured firmware for the iFactory3D printers. 
+## JUST uncomment the option for your machine
+```cpp
+// #define V6_330_TITAN_TMC 1
+// #define V6_330_TITAN_NO_TMC 1
+// #define V6_330_NO_TITAN_TMC 1
+// #define V6_330_NO_TITAN_NO_TMC 1
+// #define V6_400_TITAN_TMC 1
+// #define V6_400_NO_TITAN_TMC 1
+// #define V6_500_TITAN_TMC 1
 
-_This repository is originally forked from: https://github.com/rhapsodyv/Marlin_
-
-_This firmware is currently based on a modified version of Marlin 2.0 and includes a set of special configurations for the iFactory 3D printers._
-_If you wish, you can directly download, edit and modify our printer's firmware or flash the stock version on your printer._
-
-## Instruction
-
-- Install Visual Studio Code with the Platform IO IDE and C/C++ extensions 
-- Install Github Desktop 
-- Fork and clone this repository
-- Open it with Studio Code
-- Edit like you wish and compile it
-- Copy the created update.cbd file to a SD card 
-- Turn off printer
-- Put SD card in printer
-- Start printer and wait
-- You're finished!!!!
-
-### Contact us for help :)
+// #define V5_330_TITAN_TMC 1
+// #define V5_330_TITAN_NO_TMC 1
+// #define V5_330_NO_TITAN_TMC 1
+// #define V5_330_NO_TITAN_NO_TMC 1
+// #define XY3_V5_310_NO_TITAN_NO_TMC_NO_ABL 1
+```
 
 # Marlin 3D Printer Firmware
 
@@ -128,15 +124,12 @@ Proposed patches should be submitted as a Pull Request against the ([bugfix-2.0.
 - Please submit your questions and concerns to the [Issue Queue](https://github.com/MarlinFirmware/Marlin/issues).
 
 ### [RepRap.org Wiki Page](http://reprap.org/wiki/Marlin)
-=======
 
 ## Credits
 
 The current Marlin dev team consists of:
 
  - Scott Lahteine [[@thinkyhead](https://github.com/thinkyhead)] - USA &nbsp; [Donate](http://www.thinkyhead.com/donate-to-marlin) / Flattr: [![Flattr Scott](http://api.flattr.com/button/flattr-badge-small.png)](https://flattr.com/submit/auto?user_id=thinkyhead&url=https://github.com/MarlinFirmware/Marlin&title=Marlin&language=&tags=github&category=software)
-=======
- - Scott Lahteine [[@thinkyhead](https://github.com/thinkyhead)] - USA &nbsp; [Donate](https://www.thinkyhead.com/donate-to-marlin) / Flattr: [![Flattr Scott](http://api.flattr.com/button/flattr-badge-small.png)](https://flattr.com/submit/auto?user_id=thinkyhead&url=https://github.com/MarlinFirmware/Marlin&title=Marlin&language=&tags=github&category=software)
  - Roxanne Neufeld [[@Roxy-3D](https://github.com/Roxy-3D)] - USA
  - Chris Pepper [[@p3p](https://github.com/p3p)] - UK
  - Bob Kuhn [[@Bob-the-Kuhn](https://github.com/Bob-the-Kuhn)] - USA
